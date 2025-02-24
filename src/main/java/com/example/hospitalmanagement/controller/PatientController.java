@@ -35,7 +35,7 @@ public class PatientController {
         Optional<Patient> patient = patientRepository.findById(id);
         if (patient.isPresent()) {
             patientRepository.delete(patient.get());
-            return ResponseEntity.noContent().build(); // ✅ Ошибки нет
+            return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }
